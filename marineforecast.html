@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8" />
+<body  onload="loadDoc()">
+
+<h1>Marine Forecasts</h1>
+
+<p>
+   <label>STORM WARNINGS </label>
+   <textarea id = "StormWarningTextArea" rows = "3" cols = "150"></textarea>
+</p>
+
+<p>
+   <label>GENERAL SITUATION</label>
+   <textarea id = "GeneralSituationTextArea" rows = "3" cols = "150"></textarea>
+</p>
+</br>
+<fieldset>
+    <legend>Phuket</legend>
+     <form id="Phuket">
+       Wind Direction: 
+       <select name="PhuketwinddirectionFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="PhuketwinddirectionSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+       &nbsp;&nbsp;
+
+       Wind Magnitude: 
+       <select name="Phuketwindmagnitudelow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="Phuketwindmagnitudehigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+        
+        Weather:
+        <select name="Phuketweather">
+         <option value="Scattered showers/thunderstorms">Scattered showers/thunderstorms</option>
+         <option value="Scattered showers/isolated thunderstorms">Scattered showers/isolated thunderstorms</option>
+         <option value="Isolated showers/thunderstorms">Isolated showers/thunderstorms</option>
+         <option value="Isolated showers/scattered thunderstorms">Isolated showers/scattered thunderstorms</option>        
+        </select>
+        &nbsp;&nbsp;
+
+        Sea State:
+        <select name="Phuketseastate">
+         <option value="Sea slight">slight</option>
+         <option value="Sea slight to moderate">slight to moderate</option>
+         <option value="Sea slight to rough">slight to rough</option>
+         <option value="Sea moderate">moderate</option>   
+         <option value="Sea moderate to rough">moderate to rough</option> 
+         <option value="Sea rough">rough</option>      
+        </select> 
+        &nbsp;&nbsp;
+
+        Sea Swell:
+        <select name="Phuketseaswell">
+         <option value="Swell low">low</option>
+         <option value="Swell low to moderate">low to moderate</option>
+         <option value="Swell moderate">moderate</option>
+         <option value="Swell moderate to high">moderate to high</option>   
+         <option value="Swell high">high</option>    
+        </select>
+        &nbsp;&nbsp;
+
+        <input type="button" onclick="myFunctionPhuket()" value="Generate" />
+       <br>
+     </form>
+   
+      <p>
+        <label>Forecast</label>
+        <textarea id = "PhuketTextArea" rows = "3" cols = "50"></textarea>
+      </p>
+
+
+</fieldset>
+
+
+<fieldset>
+    <legend>Malacca</legend>
+     <form id="Malacca">
+       Wind Direction: 
+       <select name="MalaccawinddirectionFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="MalaccawinddirectionSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+        &nbsp;&nbsp;
+
+       Wind Magnitude: 
+       <select name="Malaccawindmagnitudelow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="Malaccawindmagnitudehigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+
+        Weather:
+        <select name="Malaccaweather">
+         <option value="Scattered showers/thunderstorms">Scattered showers/thunderstorms</option>
+         <option value="Scattered showers/isolated thunderstorms">Scattered showers/isolated thunderstorms</option>
+         <option value="Isolated showers/thunderstorms">Isolated showers/thunderstorms</option>
+         <option value="Isolated showers/scattered thunderstorms">Isolated showers/scattered thunderstorms</option>        
+        </select>
+        &nbsp;&nbsp;
+
+        Sea State:
+        <select name="Malaccaseastate">
+         <option value="Sea slight">slight</option>
+         <option value="Sea slight to moderate">slight to moderate</option>
+         <option value="Sea slight to rough">slight to rough</option>
+         <option value="Sea moderate">moderate</option>   
+         <option value="Sea moderate to rough">moderate to rough</option> 
+         <option value="Sea rough">rough</option>      
+        </select>
+        &nbsp;&nbsp;
+
+        Sea Swell:
+        <select name="Malaccaseaswell">
+         <option value="Swell low">low</option>
+         <option value="Swell low to moderate">low to moderate</option>
+         <option value="Swell moderate">moderate</option>
+         <option value="Swell moderate to high">moderate to high</option>   
+         <option value="Swell high">high</option>    
+        </select>
+        &nbsp;&nbsp;
+
+        <input type="button" onclick="myFunctionMalacca()" value="Generate" />
+
+       <br>
+     </form>
+   
+      <p>
+        <label>Forecast</label>
+        <textarea id = "MalaccaTextArea" rows = "3" cols = "50"></textarea>
+      </p>
+
+
+</fieldset>
+
+
+<fieldset>
+    <legend>Tioman</legend>
+     <form id="Tioman">
+       Wind Direction: 
+       <select name="TiomanwinddirectionFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="TiomanwinddirectionSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+        &nbsp;&nbsp;
+
+       Wind Magnitude: 
+       <select name="Tiomanwindmagnitudelow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="Tiomanwindmagnitudehigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+
+        Weather:
+        <select name="Tiomanweather">
+         <option value="Scattered showers/thunderstorms">Scattered showers/thunderstorms</option>
+         <option value="Scattered showers/isolated thunderstorms">Scattered showers/isolated thunderstorms</option>
+         <option value="Isolated showers/thunderstorms">Isolated showers/thunderstorms</option>
+         <option value="Isolated showers/scattered thunderstorms">Isolated showers/scattered thunderstorms</option>        
+        </select>
+        &nbsp;&nbsp;
+
+        Sea State:
+        <select name="Tiomanseastate">
+         <option value="Sea slight">slight</option>
+         <option value="Sea slight to moderate">slight to moderate</option>
+         <option value="Sea slight to rough">slight to rough</option>
+         <option value="Sea moderate">moderate</option>   
+         <option value="Sea moderate to rough">moderate to rough</option> 
+         <option value="Sea rough">rough</option>      
+        </select>
+        &nbsp;&nbsp;
+
+        Sea Swell:
+        <select name="Tiomanseaswell">
+         <option value="Swell low">low</option>
+         <option value="Swell low to moderate">low to moderate</option>
+         <option value="Swell moderate">moderate</option>
+         <option value="Swell moderate to high">moderate to high</option>   
+         <option value="Swell high">high</option>    
+        </select>
+        &nbsp;&nbsp;
+
+        <input type="button" onclick="myFunctionTioman()" value="Generate" />
+
+       <br>
+     </form>
+   
+      <p>
+        <label>Forecast</label>
+        <textarea id = "TiomanTextArea" rows = "3" cols = "50"></textarea>
+      </p>
+
+
+</fieldset>
+
+
+<fieldset>
+    <legend>Bunguran</legend>
+     <form id="Bunguran">
+       Wind Direction: 
+       <select name="BunguranwinddirectionFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="BunguranwinddirectionSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+        &nbsp;&nbsp;
+
+       Wind Magnitude: 
+       <select name="Bunguranwindmagnitudelow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="Bunguranwindmagnitudehigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+
+        Weather:
+        <select name="Bunguranweather">
+         <option value="Scattered showers/thunderstorms">Scattered showers/thunderstorms</option>
+         <option value="Scattered showers/isolated thunderstorms">Scattered showers/isolated thunderstorms</option>
+         <option value="Isolated showers/thunderstorms">Isolated showers/thunderstorms</option>
+         <option value="Isolated showers/scattered thunderstorms">Isolated showers/scattered thunderstorms</option>        
+        </select>
+        &nbsp;&nbsp;
+
+        Sea State:
+        <select name="Bunguranseastate">
+         <option value="Sea slight">slight</option>
+         <option value="Sea slight to moderate">slight to moderate</option>
+         <option value="Sea slight to rough">slight to rough</option>
+         <option value="Sea moderate">moderate</option>   
+         <option value="Sea moderate to rough">moderate to rough</option> 
+         <option value="Sea rough">rough</option>      
+        </select>
+        &nbsp;&nbsp;
+
+        Sea Swell:
+        <select name="Bunguranseaswell">
+         <option value="Swell low">low</option>
+         <option value="Swell low to moderate">low to moderate</option>
+         <option value="Swell moderate">moderate</option>
+         <option value="Swell moderate to high">moderate to high</option>   
+         <option value="Swell high">high</option>    
+        </select>
+        &nbsp;&nbsp;
+
+        <input type="button" onclick="myFunctionBunguran()" value="Generate" />
+
+       <br>
+     </form>
+   
+      <p>
+        <label>Forecast</label>
+        <textarea id = "BunguranTextArea" rows = "3" cols = "50"></textarea>
+      </p>
+
+
+</fieldset>
+
+<fieldset>
+    <legend>Condone</legend>
+     <form id="Condone">
+       Wind Direction: 
+       <select name="CondonewinddirectionFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="CondonewinddirectionSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+        &nbsp;&nbsp;
+
+       Wind Magnitude: 
+       <select name="Condonewindmagnitudelow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="Condonewindmagnitudehigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+
+        Weather:
+        <select name="Condoneweather">
+         <option value="Scattered showers/thunderstorms">Scattered showers/thunderstorms</option>
+         <option value="Scattered showers/isolated thunderstorms">Scattered showers/isolated thunderstorms</option>
+         <option value="Isolated showers/thunderstorms">Isolated showers/thunderstorms</option>
+         <option value="Isolated showers/scattered thunderstorms">Isolated showers/scattered thunderstorms</option>        
+        </select>
+        &nbsp;&nbsp;
+
+        Sea State:
+        <select name="Condoneseastate">
+         <option value="Sea slight">slight</option>
+         <option value="Sea slight to moderate">slight to moderate</option>
+         <option value="Sea slight to rough">slight to rough</option>
+         <option value="Sea moderate">moderate</option>   
+         <option value="Sea moderate to rough">moderate to rough</option> 
+         <option value="Sea rough">rough</option>      
+        </select>
+        &nbsp;&nbsp;
+
+        Sea Swell:
+        <select name="Condoneseaswell">
+         <option value="Swell low">low</option>
+         <option value="Swell low to moderate">low to moderate</option>
+         <option value="Swell moderate">moderate</option>
+         <option value="Swell moderate to high">moderate to high</option>   
+         <option value="Swell high">high</option>    
+        </select>
+        &nbsp;&nbsp;
+
+        <input type="button" onclick="myFunctionCondone()" value="Generate" />
+
+       <br>
+     </form>
+   
+      <p>
+        <label>Forecast</label>
+        <textarea id = "CondoneTextArea" rows = "3" cols = "50"></textarea>
+      </p>
+
+
+</fieldset>
+
+<fieldset>
+    <legend>Reef</legend>
+     <form id="Reef">
+       Wind Direction in the north: 
+       <select name="ReefwinddirectionNorthFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="ReefwinddirectionNorthSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+        &nbsp;&nbsp;
+
+       Wind Magnitude in the nouth: 
+       <select name="ReefwindmagnitudeNorthlow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="ReefwindmagnitudeNorthhigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+
+       Wind Direction in the south: 
+       <select name="ReefwinddirectionSouthFirst">
+         <option value="Variable">Variable</option>
+         <option value="N">N</option>
+         <option value="NNE">NNE</option>
+         <option value="NE">NE</option>
+         <option value="ENE">ENE</option>
+         <option value="E">E</option>
+         <option value="ESE">ESE</option>
+         <option value="SE">SE</option>
+         <option value="SSE">SSE</option>
+         <option value="S">S</option>
+         <option value="SSW">SSW</option>
+         <option value="SW">SW</option>
+         <option value="WSW">WSW</option>
+         <option value="W">W</option>
+         <option value="WNW">WNW</option>
+         <option value="NW">NW</option> 
+         <option value="NNW">NNW</option>
+        </select>
+
+        / 
+
+        <select name="ReefwinddirectionSouthSecond">
+         <option value=""></option>
+         <option value="/N">N</option>
+         <option value="/NNE">NNE</option>
+         <option value="/NE">NE</option>
+         <option value="/ENE">ENE</option>
+         <option value="/E">E</option>
+         <option value="/ESE">ESE</option>
+         <option value="/SE">SE</option>
+         <option value="/SSE">SSE</option>
+         <option value="/S">S</option>
+         <option value="/SSW">SSW</option>
+         <option value="/SW">SW</option>
+         <option value="/WSW">WSW</option>
+         <option value="/W">W</option>
+         <option value="/WNW">WNW</option>
+         <option value="/NW">NW</option> 
+         <option value="/NNW">NNW</option>
+        </select>
+        &nbsp;&nbsp;
+
+       Wind Magnitude in the south: 
+       <select name="ReefwindmagnitudeSouthlow">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        /
+        <select name="ReefwindmagnitudeSouthhigh">
+         <option value="05">05</option>
+         <option value="10">10</option>
+         <option value="15">15</option>
+         <option value="20">20</option>
+         <option value="25">25</option>
+         <option value="30">30</option>
+         <option value="35">35</option>
+         <option value="40">40</option>
+         <option value="45">45</option>
+         <option value="50">50</option>
+        </select>
+        </br></br>
+
+        Weather:
+        <select name="Reefweather">
+         <option value="Scattered showers/thunderstorms">Scattered showers/thunderstorms</option>
+         <option value="Scattered showers/isolated thunderstorms">Scattered showers/isolated thunderstorms</option>
+         <option value="Isolated showers/thunderstorms">Isolated showers/thunderstorms</option>
+         <option value="Isolated showers/scattered thunderstorms">Isolated showers/scattered thunderstorms</option>        
+        </select>
+        &nbsp;&nbsp;
+
+        Sea State:
+        <select name="Reefseastate">
+         <option value="Sea slight">slight</option>
+         <option value="Sea slight to moderate">slight to moderate</option>
+         <option value="Sea slight to rough">slight to rough</option>
+         <option value="Sea moderate">moderate</option>   
+         <option value="Sea moderate to rough">moderate to rough</option> 
+         <option value="Sea rough">rough</option>      
+        </select>
+        &nbsp;&nbsp;
+
+        Sea Swell:
+        <select name="Reefseaswell">
+         <option value="Swell low">low</option>
+         <option value="Swell low to moderate">low to moderate</option>
+         <option value="Swell moderate">moderate</option>
+         <option value="Swell moderate to high">moderate to high</option>   
+         <option value="Swell high">high</option>    
+        </select>
+        &nbsp;&nbsp;
+
+        <input type="button" onclick="myFunctionReef()" value="Generate" />
+
+       <br>
+     </form>
+   
+      <p>
+        <label>Forecast</label>
+        <textarea id = "ReefTextArea" rows = "3" cols = "50"></textarea>
+      </p>
+
+
+</fieldset>
+</br></br>
+<input type="button" value="Submit" />
+<script>
+
+
+function loadDoc() {
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myFunction(this);  
+  }
+ };
+xhttp.open("POST", "FORECAST.xml", true);
+xhttp.send();
+}
+function myFunction(xml) { 
+    var i;  
+    var xmlDoc = xml.responseXML;
+    var x = xmlDoc.getElementsByTagName("forecast");
+    for (i = 0; i <x.length; i++) {     
+      text = x[i].getElementsByTagName("winddirection")[0].childNodes[0].nodeValue + " " 
+           + x[i].getElementsByTagName("windmagnitude")[0].childNodes[0].nodeValue + " Knots. "
+           + x[i].getElementsByTagName("weather")[0].childNodes[0].nodeValue + ". "
+           + x[i].getElementsByTagName("seastate")[0].childNodes[0].nodeValue + ". " 
+           + x[i].getElementsByTagName("seaswell")[0].childNodes[0].nodeValue + ". " ;
+
+      document.getElementsByTagName("textarea")[i+2].value = text;
+    }
+}
+
+  
+function myFunctionPhuket() {
+    text = document.getElementById("Phuket")[0].value + document.getElementById("Phuket")[1].value + " " 
+            + document.getElementById("Phuket")[2].value + "/" + document.getElementById("Phuket")[3].value + " Knots. "
+            + document.getElementById("Phuket")[4].value + ". " + document.getElementById("Phuket")[5].value + ". "
+            + document.getElementById("Phuket")[6].value + ".";
+    document.getElementById("PhuketTextArea").value = text;
+}
+
+  function myFunctionMalacca() {
+    text = document.getElementById("Malacca")[0].value + document.getElementById("Malacca")[1].value + " " 
+            + document.getElementById("Malacca")[2].value + "/" + document.getElementById("Malacca")[3].value + " Knots. "
+            + document.getElementById("Malacca")[4].value + ". " + document.getElementById("Malacca")[5].value + ". "
+            + document.getElementById("Malacca")[6].value + ".";
+    document.getElementById("MalaccaTextArea").value = text;
+}
+
+
+  function myFunctionTioman() {
+    text = document.getElementById("Tioman")[0].value + document.getElementById("Tioman")[1].value + " " 
+            + document.getElementById("Tioman")[2].value + "/" + document.getElementById("Tioman")[3].value + " Knots. "
+            + document.getElementById("Tioman")[4].value + ". " + document.getElementById("Tioman")[5].value + ". "
+            + document.getElementById("Tioman")[6].value + ".";
+    document.getElementById("TiomanTextArea").value = text;
+}
+
+
+  function myFunctionBunguran() {
+    text = document.getElementById("Bunguran")[0].value + document.getElementById("Bunguran")[1].value + " " 
+            + document.getElementById("Bunguran")[2].value + "/" + document.getElementById("Bunguran")[3].value + " Knots. "
+            + document.getElementById("Bunguran")[4].value + ". " + document.getElementById("Bunguran")[5].value + ". "
+            + document.getElementById("Bunguran")[6].value + ".";
+    document.getElementById("BunguranTextArea").value = text;
+}
+
+  function myFunctionCondone() {
+    text = document.getElementById("Condone")[0].value + document.getElementById("Condone")[1].value + " " 
+            + document.getElementById("Condone")[2].value + "/" + document.getElementById("Condone")[3].value + " Knots. "
+            + document.getElementById("Condone")[4].value + ". " + document.getElementById("Condone")[5].value + ". "
+            + document.getElementById("Condone")[6].value + ".";
+    document.getElementById("CondoneTextArea").value = text;
+}
+
+  function myFunctionReef() {
+    text = document.getElementById("Reef")[0].value + document.getElementById("Reef")[1].value + " " 
+            + document.getElementById("Reef")[2].value + "/" + document.getElementById("Reef")[3].value + " Knots in the north, "
+            + document.getElementById("Reef")[4].value + document.getElementById("Reef")[5].value + " " 
+            + document.getElementById("Reef")[6].value + "/" + document.getElementById("Reef")[7].value + " Knots in the south. "
+            + document.getElementById("Reef")[8].value + ". " + document.getElementById("Reef")[9].value + ". "
+            + document.getElementById("Reef")[10].value + ".";
+    document.getElementById("ReefTextArea").value = text;
+}
+</script>
+
+</body>
+</html>
